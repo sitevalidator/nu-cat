@@ -15,3 +15,5 @@ docker run -p 8888:8080 nu-cat
 ```
 
 You can find the validator at [http://localhost:8888](http://localhost:8888)
+
+Also available on [Docker Hub](https://hub.docker.com/r/sitevalidator/nu-cat/).
