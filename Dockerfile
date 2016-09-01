@@ -19,3 +19,7 @@ ADD ${VALIDATOR_NU_URL} /tmp
 RUN unzip -d /tmp /tmp/${VALIDATOR_NU_ZIP}
 RUN mv /tmp/dist/vnu.war ${WEBAPPS_DIR}/ROOT.war
 RUN rm -rf /tmp/*
+
+# Turn off SSL/TLS certificate trust checking because of:
+# https://github.com/validator/validator/issues/345
+RUN echo nu.validator.xml.promiscuous-ssl=true >> /usr/local/tomcat/conf/catalina.properties
