@@ -11,7 +11,7 @@ RUN rm -rf ${WEBAPPS_DIR}/host-manager
 RUN rm -rf ${WEBAPPS_DIR}/manager
 
 # Install the validator as root
-ENV VALIDATOR_NU_VERSION 16.6.29
+ENV VALIDATOR_NU_VERSION 17.0.1
 ENV VALIDATOR_NU_ZIP vnu.war_${VALIDATOR_NU_VERSION}.zip
 ENV VALIDATOR_NU_URL https://github.com/validator/validator/releases/download/${VALIDATOR_NU_VERSION}/${VALIDATOR_NU_ZIP}
 
