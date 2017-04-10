@@ -1,4 +1,4 @@
-FROM tomcat:8.0.36-jre8
+FROM tomcat:8.0.43-jre8
 MAINTAINER Jaime Iniesta <jaimeiniesta@gmail.com>
 
 # Remove unneeded Tomcat apps
