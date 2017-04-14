@@ -14,8 +14,10 @@ RUN rm -rf ${WEBAPPS_DIR}/manager
 ENV VALIDATOR_NU_VERSION 17.3.0
 ENV VALIDATOR_NU_ZIP vnu.war_${VALIDATOR_NU_VERSION}.zip
 ENV VALIDATOR_NU_URL https://github.com/validator/validator/releases/download/${VALIDATOR_NU_VERSION}/${VALIDATOR_NU_ZIP}
+ENV VALIDATOR_NU_SHA1 3d84fd112de6965131b6560cead53f4fac74bdd7
 
 ADD ${VALIDATOR_NU_URL} /tmp
+RUN echo "${VALIDATOR_NU_SHA1} /tmp/${VALIDATOR_NU_ZIP}" | sha1sum -c -
 RUN unzip -d /tmp /tmp/${VALIDATOR_NU_ZIP}
 RUN mv /tmp/dist/vnu.war ${WEBAPPS_DIR}/ROOT.war
 RUN rm -rf /tmp/*
