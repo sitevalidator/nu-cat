@@ -29,3 +29,6 @@ RUN echo nu.validator.xml.promiscuous-ssl=true >> /usr/local/tomcat/conf/catalin
 # Set a custom timeout of 10 seconds, by default these are 5 seconds
 RUN echo nu.validator.servlet.connection-timeout=10000 >> /usr/local/tomcat/conf/catalina.properties
 RUN echo nu.validator.servlet.socket-timeout=10000 >> /usr/local/tomcat/conf/catalina.properties
+
+# Expose web port
+EXPOSE 8080
