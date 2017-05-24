@@ -10,6 +10,9 @@ RUN rm -rf ${WEBAPPS_DIR}/examples
 RUN rm -rf ${WEBAPPS_DIR}/host-manager
 RUN rm -rf ${WEBAPPS_DIR}/manager
 
+# Set up a faster SecureRandom as per https://wiki.apache.org/tomcat/HowTo/FasterStartUp
+ENV JAVA_OPTS "-Djava.security.egd=file:/dev/urandom"
+
 # Install the validator as root
 ENV VALIDATOR_NU_VERSION 17.3.0
 ENV VALIDATOR_NU_ZIP vnu.war_${VALIDATOR_NU_VERSION}.zip
