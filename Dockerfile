@@ -14,10 +14,10 @@ RUN rm -rf ${WEBAPPS_DIR}/manager
 ENV JAVA_OPTS "-Djava.security.egd=file:/dev/urandom"
 
 # Install the validator as root
-ENV VALIDATOR_NU_VERSION 17.7.0
+ENV VALIDATOR_NU_VERSION 17.9.0
 ENV VALIDATOR_NU_ZIP vnu.war_${VALIDATOR_NU_VERSION}.zip
 ENV VALIDATOR_NU_URL https://github.com/validator/validator/releases/download/${VALIDATOR_NU_VERSION}/${VALIDATOR_NU_ZIP}
-ENV VALIDATOR_NU_SHA1 9efb1552be69f258c18eefdd34002fb7cc6d058f
+ENV VALIDATOR_NU_SHA1 a8dbc3cd932903335f18936a345cca2a88defb32
 
 ADD ${VALIDATOR_NU_URL} /tmp
 RUN echo "${VALIDATOR_NU_SHA1} /tmp/${VALIDATOR_NU_ZIP}" | sha1sum -c -
