@@ -25,10 +25,6 @@ RUN echo "${VALIDATOR_NU_SHA1} /tmp/${VALIDATOR_NU_ZIP}" | sha1sum -c - \
  && mv /tmp/dist/vnu.war ${WEBAPPS_DIR}/ROOT.war \
  && rm -rf /tmp/*
 
-# Turn off SSL/TLS certificate trust checking because of:
-# https://github.com/validator/validator/issues/345
-RUN echo nu.validator.xml.promiscuous-ssl=true >> /usr/local/tomcat/conf/catalina.properties
-
 # Set a custom timeout of 10 seconds, by default these are 5 seconds
 RUN echo nu.validator.servlet.connection-timeout=10000 >> /usr/local/tomcat/conf/catalina.properties \
  && echo nu.validator.servlet.socket-timeout=10000 >> /usr/local/tomcat/conf/catalina.properties
